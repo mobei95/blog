@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<p>姓名</p>
+    <input type="text" v-model="user.name">
+    <p>年龄：{{user.age}}</p>
+    <p>位置：{{location}}</p>
+    <p>{{user.name}}</p>
+    <p>{{user.name}}{{user.age}}</p>
+    <div v-html="user.sex"></div>
+	</div>
+	<script src="./index.js"></script>
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				user: {
+            name: '阿白Smile',
+            age: 24,
+            sex: `<p>性别：男</p>`
+        },
+        location: '北京'
+			}
+		})
+	</script>
+</body>
+</html>
