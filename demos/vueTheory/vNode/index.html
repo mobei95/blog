@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app"></div>
+	<script src="./index.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+		let vNode = createElement('div', {id: 'cointiner', class: 'warp', style: {color: 'red'}}, createElement('p', {}, 'pppp'), 'vNode')
+		// console.log(vNode)
+		// render(vNode, app)
+		let res = Vue.compile(`<div id="warp"><span>{{msg}}</span></div>`)
+		console.log('vue', res)
+		console.log('render', res.render)
+		new Vue({
+			el: 'app',
+			data: {
+				msg: 'test'
+			}
+		})
+	</script>
+</body>
+</html>
