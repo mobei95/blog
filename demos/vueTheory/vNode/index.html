@@ -7,20 +7,26 @@
 <body>
 	<div id="app"></div>
 	<script src="./index.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
 	<script>
-		let vNode = createElement('div', {id: 'cointiner', class: 'warp', style: {color: 'red'}}, createElement('p', {}, 'pppp'), 'vNode')
-		// console.log(vNode)
+		let vNode = createElement('div', 
+      {id: 'container', class: 'warp'}, 
+      [
+        createTextVnode('模拟实现'),
+        createElement('p', {style: {color: 'red'}}, [createTextVnode('虚拟DOM')])
+      ]
+    )
+		console.log('vNode', vNode)
 		// render(vNode, app)
-		let res = Vue.compile(`<div id="warp"><span>{{msg}}</span></div>`)
-		console.log('vue', res)
-		console.log('render', res.render)
-		new Vue({
-			el: 'app',
-			data: {
-				msg: 'test'
-			}
-		})
+		// let res = Vue.compile(`<div id="warp" style="fontSize: 16px;"><span class="content">{{msg}}</span></div>`)
+		// console.log('vue', res)
+		// console.log('render', res.render)
+		// new Vue({
+		// 	el: 'app',
+		// 	data: {
+		// 		msg: 'test'
+		// 	}
+		// })
 	</script>
 </body>
 </html>
