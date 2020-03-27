@@ -16,3 +16,4 @@
 1. [实现一个简单的模板编译机制](https://github.com/mobei95/blog/issues/7)
 2. [响应式系统的基本原理](https://github.com/mobei95/blog/issues/8)
 3. [依赖收集与追踪的基本原理](https://github.com/mobei95/blog/issues/9)
+4. [Vue虚拟DOM的实现原理](https://github.com/mobei95/blog/issues/10)
