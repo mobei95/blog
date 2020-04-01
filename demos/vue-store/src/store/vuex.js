@@ -26,24 +26,25 @@ class Store {
 
 		let mutations = options.mutations
 		this.mutations = {}
+		mutations && this.setMutations(mutations)
+
+		let actions = options.actions
+		this.actions = {}
+		actions && this.setActions(actions)
+	}
+
+	get state() {
+		return this.s.state
+	}
+
+	// 设置mutations
+	setMutations = (mutations) => {
 		// 遍历options中的每一个mutation，将其第一个参数绑定为当前实例的state
 		Object.keys(mutations).forEach(mutationName => {
 			this.mutations[mutationName] = (payload) => {
 				mutations[mutationName](this.state, payload)
 			}
 		})
-
-		let actions = options.actions
-		this.actions = {}
-		Object.keys(actions).forEach(actionName => {
-			this.actions[actionName] = (payload) => {
-				actions[actionName](this, payload)
-			}
-		})
-	}
-
-	get state() {
-		return this.s.state
 	}
 
 	commit = (mutationName, payload) => {
@@ -51,13 +52,18 @@ class Store {
 
 	}
 
+	// 设置actions
+	setActions = (actions) => {
+		Object.keys(actions).forEach(actionName => {
+			this.actions[actionName] = (payload) => {
+				actions[actionName](this, payload)
+			}
+		})
+	}
+
 	dispatch = (actionName, payload) => {
 		this.actions[actionName](payload)
 	}
-}
-
-const vuexInit = function(vm) {
-	
 }
 
 export default {
