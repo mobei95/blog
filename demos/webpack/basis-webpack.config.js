@@ -19,6 +19,7 @@ module.exports = {
   ],
   devServer: {
     port: '8080',
+    host: 'localhost',
     progress: true,
     contentBase: './dist'
   },
@@ -33,7 +34,7 @@ module.exports = {
       hash: true
     }),
     new MiniCssExtractPlugin({
-      filename: 'index.css'
+      filename: 'css/index.css'
     }),
     new webpack.ProvidePlugin({
       $: "jquery"
@@ -60,6 +61,10 @@ module.exports = {
           use: [MiniCssExtractPlugin.loader, 'postcss-loader', 'css-loader']
       },
       {
+        test: /\.less/,
+        use: [MiniCssExtractPlugin.loader, 'postcss-loader', 'css-loader','less-loader']
+      },
+      {
         test: /\.scss/,
         use: [MiniCssExtractPlugin.loader, 'postcss-loader', 'css-loader','scss-loader']
       },
@@ -69,7 +74,8 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
-              limit: 8192
+              limit: 8192,
+              outputPath: 'img/'
             }
           }
         ]
