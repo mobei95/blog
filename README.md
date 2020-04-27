@@ -21,3 +21,4 @@
 ## Webpack
 
 1. [从零开始学webpack：基础配置](https://github.com/mobei95/blog/issues/12)
+2. [从零开始学webpack：进阶配置](https://github.com/mobei95/blog/issues/13)
