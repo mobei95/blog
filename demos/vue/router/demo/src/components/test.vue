@@ -10,7 +10,6 @@
       return {}
     },
     created() {
-      console.log('this.$router', this)
     },
     methods: {
       clickHandle() {
