@@ -868,7 +868,7 @@
     "selfsigned": "^1.10.7",
     "semver": "^5.7.1",
     "send": "^0.17.1",
-    "serialize-javascript": "^2.1.2",
+    "serialize-javascript": "^4.0.0",
     "serve-static": "^1.14.1",
     "set-blocking": "^2.0.0",
     "set-value": "^2.0.1",
