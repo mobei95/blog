@@ -777,7 +777,7 @@
     "neo-async": "^2.6.1",
     "nice-try": "^1.0.5",
     "normalize-path": "^3.0.0",
-    "node-forge": "^0.9.0",
+    "node-forge": "^0.10.0",
     "node-libs-browser": "^2.2.1",
     "npm-run-path": "^2.0.2",
     "object-assign": "^4.1.1",
